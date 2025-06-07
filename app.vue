@@ -1,6 +1,44 @@
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+  <UApp>
+    <LayoutHeader />
+
+    <!-- Main Sections - Reorganized with consolidated experiences -->
+    <SectionsHeroSection />
+    <SectionsExperiencesSection />
+    <SectionsCulinarySection />
+    <SectionsGallerySection />
+    <SectionsMembershipSection />
+    <SectionsContactSection />
+    <SectionsFaqSection />
+
+    <!-- Footer -->
+    <LayoutFooter />
+
+    <!-- Floating Components -->
+    <UiWhatsAppFloat />
+  </UApp>
 </template>
+
+<script setup>
+import { useAnimations } from "~/composables/useAnimations";
+
+// Metadata for SEO
+useHead({
+  title: "Eco Parque Sapucaia - Clube Recreativo",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Clube recreativo em meio à natureza onde membros e famílias desfrutam de atividades exclusivas. Piscinas, fazendinha, trilhas, pesca esportiva e muito mais. Torne-se membro!",
+    },
+    {
+      name: "keywords",
+      content:
+        "eco parque sapucaia, clube recreativo, associação, membro, família, natureza, piscina, fazendinha, trilhas, pesca esportiva, atividades recreativas, mensalidade",
+    },
+  ],
+});
+
+// Setup animations
+useAnimations();
+</script>

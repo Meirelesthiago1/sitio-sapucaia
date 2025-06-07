@@ -78,7 +78,7 @@ const faqs = [
     id: 2,
     question: "Qual é o valor da mensalidade e taxa de adesão?",
     answer:
-      "A mensalidade familiar é de 10% do salário mínimo vigente (R$ 141,20) e a individual é de 6% (R$ 84,72). Há também uma taxa de adesão única obrigatória na inscrição, cujo valor é definido pela administração. Entre em contato para conhecer os valores atuais da taxa de adesão.",
+      "A mensalidade familiar é de 10% do salário mínimo vigente (R$ 151,80) e a individual é de 6% (R$ 91,80). Há também uma taxa de adesão única obrigatória na inscrição, cujo valor é definido pela administração. Entre em contato para conhecer os valores atuais da taxa de adesão.",
   },
   {
     id: 3,

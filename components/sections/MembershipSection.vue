@@ -62,7 +62,7 @@
                 10% do salário mínimo
               </div>
               <p class="text-sm md:text-base text-slate-500 mt-1 md:mt-2">
-                Valor atual: R$ 141,20/mês*
+                Valor atual: R$ 151,80/mês*
               </p>
             </div>
 
@@ -201,7 +201,7 @@
                 6% do salário mínimo
               </div>
               <p class="text-sm md:text-base text-slate-500 mt-1 md:mt-2">
-                Valor atual: R$ 84,72/mês*
+                Valor atual: R$ 91,80/mês*
               </p>
             </div>
 
@@ -491,7 +491,7 @@
       <!-- Observação sobre valores -->
       <div class="mt-8 text-center">
         <p class="text-sm text-slate-500">
-          * Valores baseados no salário mínimo vigente (R$ 1.412,00). Sujeitos a
+          * Valores baseados no salário mínimo vigente (R$ 1.518,00). Sujeitos a
           alteração conforme legislação.
         </p>
       </div>

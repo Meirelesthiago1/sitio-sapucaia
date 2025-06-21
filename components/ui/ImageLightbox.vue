@@ -94,11 +94,11 @@
               <img
                 :src="currentImage.image || currentImage.thumbnail"
                 :alt="currentImage.title || currentImage.alt"
-                class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+                class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl"
               />
 
               <!-- Image info -->
-              <div class="mt-4 text-center text-white max-w-2xl">
+              <div class="mt-4 text-center text-white max-w-2xl mb-20 md:mb-24">
                 <h3 v-if="currentImage.title" class="text-2xl font-bold mb-2">
                   {{ currentImage.title }}
                 </h3>
@@ -124,7 +124,7 @@
         <!-- Thumbnails strip (for large screens) -->
         <div
           v-if="images.length > 1 && images.length <= 10"
-          class="absolute bottom-16 left-1/2 transform -translate-x-1/2 hidden md:flex space-x-2 bg-black/30 backdrop-blur-sm rounded-full p-2"
+          class="absolute bottom-20 left-1/2 transform -translate-x-1/2 hidden md:flex space-x-2 bg-black/30 backdrop-blur-sm rounded-full p-2"
         >
           <button
             v-for="(image, index) in images"

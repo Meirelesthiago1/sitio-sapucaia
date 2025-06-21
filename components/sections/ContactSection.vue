@@ -91,7 +91,7 @@
                 </div>
                 <div>
                   <p class="font-semibold text-gray-800">Telefone</p>
-                  <p class="text-gray-600">(11) 99876-5432</p>
+                  <p class="text-gray-600">(32) 99963-5827</p>
                   <p class="text-sm text-gray-500">WhatsApp disponível</p>
                 </div>
               </div>
@@ -234,7 +234,7 @@
           <div>
             <h4 class="font-bold text-xl mb-3">📞 Dúvidas de Localização</h4>
             <p class="text-emerald-100">
-              Entre em contato pelo WhatsApp (11) 99876-5432 para orientações
+              Entre em contato pelo WhatsApp (32) 99963-5827 para orientações
               detalhadas de como chegar.
             </p>
           </div>

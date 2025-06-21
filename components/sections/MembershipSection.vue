@@ -59,10 +59,10 @@
               <div
                 class="text-3xl md:text-4xl font-bold text-slate-800 mt-1 md:mt-2"
               >
-                10% do salário mínimo
+                R$ 151,80/mês
               </div>
-              <p class="text-sm md:text-base text-slate-500 mt-1 md:mt-2">
-                Valor atual: R$ 151,80/mês*
+              <p class="text-xs md:text-sm text-slate-400 mt-1 md:mt-2">
+                *Baseado em 10% do salário mínimo vigente
               </p>
             </div>
 
@@ -145,24 +145,6 @@
                     >Até 4 convidados por visita</span
                   >
                 </li>
-                <li class="flex items-center">
-                  <svg
-                    class="w-4 h-4 md:w-5 md:h-5 text-emerald-500 mr-2 md:mr-3 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 13l4 4L19 7"
-                    ></path>
-                  </svg>
-                  <span class="text-sm md:text-base text-slate-700"
-                    >Prioridade no salão de festas</span
-                  >
-                </li>
               </ul>
             </div>
 
@@ -198,10 +180,10 @@
               <div
                 class="text-3xl md:text-4xl font-bold text-slate-800 mt-1 md:mt-2"
               >
-                6% do salário mínimo
+                R$ 91,80/mês
               </div>
-              <p class="text-sm md:text-base text-slate-500 mt-1 md:mt-2">
-                Valor atual: R$ 91,80/mês*
+              <p class="text-xs md:text-sm text-slate-400 mt-1 md:mt-2">
+                *Baseado em 6% do salário mínimo vigente
               </p>
             </div>
 
@@ -282,24 +264,6 @@
                   </svg>
                   <span class="text-sm md:text-base text-slate-700"
                     >Atividades recreativas</span
-                  >
-                </li>
-                <li class="flex items-center">
-                  <svg
-                    class="w-4 h-4 md:w-5 md:h-5 text-blue-500 mr-2 md:mr-3 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 13l4 4L19 7"
-                    ></path>
-                  </svg>
-                  <span class="text-sm md:text-base text-slate-700"
-                    >Locação do salão de festas</span
                   >
                 </li>
               </ul>

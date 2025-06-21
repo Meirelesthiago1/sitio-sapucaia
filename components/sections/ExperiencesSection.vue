@@ -97,11 +97,11 @@
                 <div class="space-y-3">
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(familyImages, 0)"
+                    @click="openLightboxByRole('family', 'primary')"
                   >
                     <img
-                      :src="familyImages[0].image"
-                      :alt="familyImages[0].alt"
+                      :src="familyImages.primary?.image"
+                      :alt="familyImages.primary?.alt"
                       class="w-full h-48 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <!-- Lightbox indicator -->
@@ -129,11 +129,11 @@
                   </div>
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(familyImages, 1)"
+                    @click="openLightboxByRole('family', 'secondary')"
                   >
                     <img
-                      :src="familyImages[1].image"
-                      :alt="familyImages[1].alt"
+                      :src="familyImages.secondary?.image"
+                      :alt="familyImages.secondary?.alt"
                       class="w-full h-48 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -162,11 +162,11 @@
                 <div class="space-y-3">
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(familyImages, 2)"
+                    @click="openLightboxByRole('family', 'highlight')"
                   >
                     <img
-                      :src="familyImages[2].image"
-                      :alt="familyImages[2].alt"
+                      :src="familyImages.highlight?.image"
+                      :alt="familyImages.highlight?.alt"
                       class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -193,11 +193,11 @@
                   </div>
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(familyImages, 3)"
+                    @click="openLightboxByRole('family', 'accent')"
                   >
                     <img
-                      :src="familyImages[3].image"
-                      :alt="familyImages[3].alt"
+                      :src="familyImages.accent?.image"
+                      :alt="familyImages.accent?.alt"
                       class="w-full h-32 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -241,11 +241,11 @@
                 <div class="space-y-3">
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(relaxImages, 0)"
+                    @click="openLightboxByRole('relax', 'primary')"
                   >
                     <img
-                      :src="relaxImages[0].image"
-                      :alt="relaxImages[0].alt"
+                      :src="relaxImages.primary?.image"
+                      :alt="relaxImages.primary?.alt"
                       class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -272,11 +272,11 @@
                   </div>
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(relaxImages, 1)"
+                    @click="openLightboxByRole('relax', 'secondary')"
                   >
                     <img
-                      :src="relaxImages[1].image"
-                      :alt="relaxImages[1].alt"
+                      :src="relaxImages.secondary?.image"
+                      :alt="relaxImages.secondary?.alt"
                       class="w-full h-32 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -305,11 +305,11 @@
                 <div class="space-y-3">
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(relaxImages, 2)"
+                    @click="openLightboxByRole('relax', 'highlight')"
                   >
                     <img
-                      :src="relaxImages[2].image"
-                      :alt="relaxImages[2].alt"
+                      :src="relaxImages.highlight?.image"
+                      :alt="relaxImages.highlight?.alt"
                       class="w-full h-48 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -336,11 +336,11 @@
                   </div>
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(relaxImages, 3)"
+                    @click="openLightboxByRole('relax', 'accent')"
                   >
                     <img
-                      :src="relaxImages[3].image"
-                      :alt="relaxImages[3].alt"
+                      :src="relaxImages.accent?.image"
+                      :alt="relaxImages.accent?.alt"
                       class="w-full h-48 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -383,15 +383,6 @@
 
                 <!-- Features List - Clean -->
                 <ul class="space-y-2 text-slate-700">
-                  <li class="flex items-start">
-                    <span
-                      class="inline-block w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-4 flex-shrink-0"
-                    ></span>
-                    <span
-                      >Pesca esportiva com equipamentos inclusos e
-                      instrutor</span
-                    >
-                  </li>
                   <li class="flex items-start">
                     <span
                       class="inline-block w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-4 flex-shrink-0"
@@ -464,9 +455,7 @@
                     <span
                       class="inline-block w-2 h-2 bg-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"
                     ></span>
-                    <span
-                      >Atividades aquáticas e esportes na piscina natural</span
-                    >
+                    <span>Atividades aquáticas na piscina natural</span>
                   </li>
                   <li class="flex items-start">
                     <span
@@ -482,11 +471,11 @@
                 <div class="space-y-3">
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(funImages, 0)"
+                    @click="openLightboxByRole('fun', 'primary')"
                   >
                     <img
-                      :src="funImages[0].image"
-                      :alt="funImages[0].alt"
+                      :src="funImages.primary?.image"
+                      :alt="funImages.primary?.alt"
                       class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -513,11 +502,11 @@
                   </div>
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(funImages, 1)"
+                    @click="openLightboxByRole('fun', 'secondary')"
                   >
                     <img
-                      :src="funImages[1].image"
-                      :alt="funImages[1].alt"
+                      :src="funImages.secondary?.image"
+                      :alt="funImages.secondary?.alt"
                       class="w-full h-32 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -546,11 +535,11 @@
                 <div class="space-y-3">
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(funImages, 2)"
+                    @click="openLightboxByRole('fun', 'highlight')"
                   >
                     <img
-                      :src="funImages[2].image"
-                      :alt="funImages[2].alt"
+                      :src="funImages.highlight?.image"
+                      :alt="funImages.highlight?.alt"
                       class="w-full h-48 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -577,11 +566,11 @@
                   </div>
                   <div
                     class="relative overflow-hidden rounded-2xl group/img cursor-pointer"
-                    @click="openLightbox(funImages, 3)"
+                    @click="openLightboxByRole('fun', 'accent')"
                   >
                     <img
-                      :src="funImages[3].image"
-                      :alt="funImages[3].alt"
+                      :src="funImages.accent?.image"
+                      :alt="funImages.accent?.alt"
                       class="w-full h-48 object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
                     <div
@@ -650,107 +639,24 @@
 <script setup>
 import { ref } from "vue";
 
+// Usar o composable específico para experiências
+const { getSectionImages, getSectionImagesArray, getImageIndex } =
+  useExperienceImages();
+
+// Obter imagens organizadas por seção e role
+const familyImages = getSectionImages("family");
+const relaxImages = getSectionImages("relax");
+const funImages = getSectionImages("fun");
+
 // Lightbox state
 const lightboxOpen = ref(false);
 const lightboxImages = ref([]);
 const lightboxIndex = ref(0);
 
-// Image collections for each section
-const familyImages = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    alt: "Família se divertindo",
-    title: "Diversão em Família",
-    category: "Para Famílias",
-  },
-  {
-    image:
-      "https://cdn.2rscms.com.br/uploads/5145/album/160/photo_657b0b402c0c7.jpg",
-    alt: "Piscina natural",
-    title: "Piscina Natural",
-    category: "Para Famílias",
-  },
-  {
-    image:
-      "https://cdn.create.vista.com/api/media/medium/12792190/stock-photo-playground?token=",
-    alt: "Crianças brincando na natureza",
-    title: "Playground (até 12 anos)",
-    category: "Para Famílias",
-  },
-  {
-    image: "https://www.erosimoveisrj.com.br/admin/imovel/1005958.jpg",
-    alt: "Salão de festas",
-    title: "Salão de Festas",
-    category: "Para Famílias",
-  },
-];
-
-const relaxImages = [
-  {
-    image:
-      "https://s2-g1.glbimg.com/BS4bUEb0Znt3aOSFrGMvLHIvqqs=/0x0:4928x3264/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2017/0/X/2nIyZ3RXqiU5GY537BLA/antonio-visita-familiares-em-vilhena-e-foi-convidado-a-conhecer-o-pesque-pague.jpg",
-    alt: "Pesca tranquila",
-    title: "Pesca Esportiva",
-    category: "Para Relaxar",
-  },
-  {
-    image:
-      "https://borazeviagens.com.br/wp-content/uploads/2020/11/GOPR0800-1024x768.jpg",
-    alt: "Trilha contemplativa",
-    title: "Trilhas Contemplativas",
-    category: "Para Relaxar",
-  },
-  {
-    image:
-      "https://sitiosaojorge.com.br/wp-content/uploads/2023/04/Casamento-rustico-Comida-caseira-e-regional-11-scaled.webp",
-    alt: "Restaurante com vista",
-    title: "Gastronomia Regional",
-    category: "Para Relaxar",
-  },
-  {
-    image:
-      "https://www.aarquiteta.com.br/blog/wp-content/uploads/2023/03/Quiosque-de-Sitio-Um-Lugar-Perfeito-para-Momentos-de-Lazer-e-Descanso.png",
-    alt: "Área de convivência",
-    title: "Área de Convivência",
-    category: "Para Relaxar",
-  },
-];
-
-const funImages = [
-  {
-    image:
-      "https://www.oab-ro.org.br/gerenciador/data/uploads/2018/08/Inaugura%C3%A7%C3%A3o-quadra-de-v%C3%B4lei-17.jpg",
-    alt: "Quadra de vôlei de areia",
-    title: "Quadra de Vôlei de Areia",
-    category: "Para se Divertir",
-  },
-  {
-    image:
-      "https://cdn.2rscms.com.br/uploads/5145/album/160/photo_657b0b402c0c7.jpg",
-    alt: "Esportes aquáticos",
-    title: "Esportes Aquáticos",
-    category: "Para se Divertir",
-  },
-  {
-    image: "https://i.imgur.com/1eOhARQ.jpeg",
-    alt: "Campo de futebol",
-    title: "Campo de Futebol",
-    category: "Para se Divertir",
-  },
-  {
-    image:
-      "https://itacareecoresort.com.br/wp-content/uploads/2022/03/DSC_2078-1024x682.jpg",
-    alt: "Salão de jogos",
-    title: "Salão de Jogos",
-    category: "Para se Divertir",
-  },
-];
-
-// Lightbox methods
-const openLightbox = (images, index) => {
-  lightboxImages.value = images;
-  lightboxIndex.value = index;
+// Método melhorado para abrir lightbox com role específico
+const openLightboxByRole = (sectionName, imageRole) => {
+  lightboxImages.value = getSectionImagesArray(sectionName);
+  lightboxIndex.value = getImageIndex(sectionName, imageRole);
   lightboxOpen.value = true;
 };
 

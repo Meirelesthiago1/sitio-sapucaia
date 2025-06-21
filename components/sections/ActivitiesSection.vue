@@ -19,33 +19,6 @@
           class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-500"
         >
           <div
-            class="h-48 bg-emerald-100 rounded-lg mb-4 flex items-center justify-center"
-          >
-            <span class="text-4xl">🎣</span>
-          </div>
-          <h3 class="text-2xl font-bold mb-3 text-slate-800">
-            Pesca Esportiva
-          </h3>
-          <p class="text-slate-600 mb-4">
-            Desfrute de momentos relaxantes pescando em nossas lagoas
-            cristalinas.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm"
-              >Equipamentos inclusos</span
-            >
-            <span
-              class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm"
-              >Instrutor disponível</span
-            >
-          </div>
-        </div>
-
-        <div
-          class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-500"
-        >
-          <div
             class="h-48 bg-blue-100 rounded-lg mb-4 flex items-center justify-center"
           >
             <span class="text-4xl">🏃‍♂️</span>
@@ -99,6 +72,4 @@
   </section>
 </template>
 
-<script setup>
-// Componente simplificado para evitar erros
-</script>
+<script setup></script>

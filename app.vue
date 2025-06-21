@@ -2,7 +2,6 @@
   <UApp>
     <LayoutHeader />
 
-    <!-- Main Sections - Reorganized with consolidated experiences -->
     <SectionsHeroSection />
     <SectionsExperiencesSection />
     <SectionsCulinarySection />
@@ -11,10 +10,8 @@
     <SectionsContactSection />
     <SectionsFaqSection />
 
-    <!-- Footer -->
     <LayoutFooter />
 
-    <!-- Floating Components -->
     <UiWhatsAppFloat />
   </UApp>
 </template>

@@ -51,10 +51,10 @@
         <div>
           <h4 class="text-lg font-semibold mb-4">Contato</h4>
           <ul class="space-y-2 text-gray-300">
-            <li>(11) 99876-5432</li>
-            <li>contato@sapucaia.com.br</li>
+            <li>(32) 99963-5827</li>
+            <li>Ecoparksapucaia@gmail.com</li>
             <li>Sítio Sapucaia</li>
-            <li>Zona Rural - Minas Gerais</li>
+            <li>Zona Rural - Rio de Janeiro</li>
           </ul>
         </div>
 
@@ -63,7 +63,7 @@
           <ul class="space-y-2">
             <li>
               <a
-                href="/regimento-interno-sapucaia.pdf"
+                href="/regimento-interno.pdf"
                 download
                 class="text-gray-300 hover:text-white transition-colors flex items-center"
               >

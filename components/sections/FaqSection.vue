@@ -110,12 +110,12 @@ const faqs = [
     answer:
       "Você pode usar as instalações até 30 dias após o vencimento. Após 4 mensalidades em atraso consecutivas, o membro é excluído automaticamente e precisará pagar nova taxa de adesão para retornar.",
   },
-  {
+  /* {
     id: 8,
     question: "Posso levar meu pet?",
     answer:
       "Pets são bem-vindos nas áreas externas, desde que mantidos na coleira e sob supervisão. Não é permitida a entrada de animais nas piscinas e salão de festas.",
-  },
+  }, */
   {
     id: 9,
     question: "Há estacionamento disponível?",
@@ -128,12 +128,12 @@ const faqs = [
     answer:
       "Sim, mas sempre sob supervisão dos responsáveis. O playground é específico para crianças até 12 anos, conforme regimento interno. É obrigatório o acompanhamento de adultos em todas as atividades e trilhas.",
   },
-  {
+  /*  {
     id: 11,
     question: "Posso alugar o salão de festas?",
     answer:
       "Sim! Membros podem alugar o salão de festas mediante pagamento antecipado e assinatura de contrato. Os valores são tabelados pela diretoria e o agendamento deve ser feito com antecedência.",
-  },
+  }, */
   {
     id: 12,
     question: "Onde posso consultar todas as regras do clube?",

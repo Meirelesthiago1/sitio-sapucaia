@@ -57,38 +57,9 @@
 </template>
 
 <script setup>
-// Culinary dishes data
-const dishes = [
-  {
-    id: 1,
-    title: "Peixe Assado na Brasa",
-    image:
-      "https://minhasreceitinhas.com.br/wp-content/uploads/2023/03/maxresdefault-1-1-730x365.jpg",
-    description:
-      "Peixe fresco da nossa piscicultura, temperado com ervas aromáticas e assado na brasa.",
-  },
-  {
-    id: 2,
-    title: "Frango Caipira",
-    image:
-      "https://i.pinimg.com/736x/0e/f8/1f/0ef81fda8dc79f9f29132b97006ddc24.jpg",
-    description:
-      "Frango assado com legumes frescos da horta em panela de ferro.",
-  },
-  {
-    id: 3,
-    title: "Feijoada",
-    image:
-      "https://espetinhodesucesso.com/wp-content/uploads/2022/08/o-que-e-bom-para-acompanhar-a-feijoada.jpg",
-    description:
-      "Feijoada com carne de porco, linguiça, costela, couve, pimentão, cebola e arroz.",
-  },
-  {
-    id: 4,
-    title: "Torta holandesa sorvete",
-    image:
-      "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/04/05/776548241-torta-holandesa-sorvete-1.jpg",
-    description: "Torta holandesa com sorvete de creme de leite",
-  },
-];
+// Usar o composable centralizado de imagens
+const { getImagesByCategory } = useGalleryImages();
+
+// Obter imagens da categoria culinária
+const dishes = getImagesByCategory("culinary");
 </script>

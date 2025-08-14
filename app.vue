@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { useAnimations } from "~/composables/useAnimations";
+import { onMounted } from "vue";
 
 // Metadata for SEO
 useHead({
@@ -37,5 +37,23 @@ useHead({
 });
 
 // Setup animations
-useAnimations();
+onMounted(() => {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate-in");
+            }
+        });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll(
+        ".animate-fade-in, .animate-fade-in-up, .animate-slide-in-left, .animate-slide-in-right, .animate-stagger-in"
+    );
+    animatedElements.forEach((el) => observer.observe(el));
+});
 </script>

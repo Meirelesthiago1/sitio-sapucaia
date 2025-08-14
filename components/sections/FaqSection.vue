@@ -62,6 +62,10 @@
 
 <script setup>
 import { ref } from "vue";
+import { getBusinessHours } from "~/helpers/contact";
+
+// Get environment-based data
+const businessHours = getBusinessHours();
 
 // Reactive state for expanded FAQ
 const expandedFaq = ref(null);
@@ -101,7 +105,7 @@ const faqs = [
     {
         id: 6,
         question: "Qual é o horário de funcionamento?",
-        answer: "Funcionamos todos os dias das 8h às 18h. Todos os membros e convidados acima de 5 anos devem apresentar carteirinha de identificação na entrada.",
+        answer: `Funcionamos ${businessHours.full}. Todos os membros e convidados acima de 5 anos devem apresentar carteirinha de identificação na entrada.`,
     },
     {
         id: 7,

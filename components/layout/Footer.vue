@@ -3,14 +3,13 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-2xl font-bold mb-4">Eco Parque Sapucaia</h3>
+                    <h3 class="text-2xl font-bold mb-4">{{ companyInfo.name }}</h3>
                     <p class="text-gray-300 mb-4">
-                        Clube recreativo onde membros e famílias vivem momentos
-                        únicos em meio à natureza.
+                        {{ companyInfo.description }}
                     </p>
                     <div class="flex space-x-4">
                         <a
-                            href="https://instagram.com/sapucaia"
+                            :href="socialLinks.instagram"
                             target="_blank"
                             class="text-gray-300 hover:text-white transition-colors"
                         >
@@ -25,7 +24,7 @@
                             </svg>
                         </a>
                         <a
-                            href="https://facebook.com/sapucaia"
+                            :href="socialLinks.facebook"
                             target="_blank"
                             class="text-gray-300 hover:text-white transition-colors"
                         >
@@ -59,10 +58,10 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Contato</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li>(32) 99963-5827</li>
-                        <li>Ecoparksapucaia@gmail.com</li>
-                        <li>Sítio Sapucaia</li>
-                        <li>Zona Rural - Rio de Janeiro</li>
+                        <li>{{ contactInfo.phone }}</li>
+                        <li>{{ contactInfo.emailGeneral }}</li>
+                        <li>{{ addressInfo.name }}</li>
+                        <li>{{ addressInfo.zone }} - {{ addressInfo.state }}</li>
                     </ul>
                 </div>
 
@@ -73,7 +72,7 @@
                             <a
                                 href="/regimento-interno.pdf"
                                 download
-                                class="text-gray-300 hover:text-white transition-colors flex items-center"
+                                class="text-gray-300 text-lg font-semibold hover:text-white transition-colors flex items-center"
                             >
                                 <svg
                                     class="w-4 h-4 mr-2"
@@ -92,7 +91,7 @@
                             </a>
                         </li>
                         <li class="text-gray-300 text-sm">
-                            Todos os dias<br />8h às 18h
+                            {{ businessHours.full }}
                         </li>
                     </ul>
                 </div>
@@ -108,6 +107,21 @@
 </template>
 
 <script setup>
+import { 
+    getContactInfo, 
+    getBusinessHours, 
+    getAddressInfo, 
+    getSocialLinks, 
+    getCompanyInfo 
+} from "~/helpers/contact";
+
+// Get environment-based data
+const contactInfo = getContactInfo();
+const businessHours = getBusinessHours();
+const addressInfo = getAddressInfo();
+const socialLinks = getSocialLinks();
+const companyInfo = getCompanyInfo();
+
 // Footer data
 const quickLinks = [
     { href: "#hero", label: "Início" },

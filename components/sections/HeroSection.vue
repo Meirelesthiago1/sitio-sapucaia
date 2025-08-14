@@ -12,9 +12,9 @@
     >
         <!-- Floating particles effect -->
         <div class="absolute inset-0 overflow-hidden">
-            <div class="floating-particle animate-float-1"></div>
-            <div class="floating-particle animate-float-2"></div>
-            <div class="floating-particle animate-float-3"></div>
+            <div class="floating-particle animate-float-1" />
+            <div class="floating-particle animate-float-2" />
+            <div class="floating-particle animate-float-3" />
         </div>
 
         <div

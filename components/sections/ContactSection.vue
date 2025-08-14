@@ -65,9 +65,9 @@
                                     <p
                                         class="text-sm md:text-base text-gray-600"
                                     >
-                                        Sítio Sapucaia<br />
-                                        Zona Rural<br />
-                                        Minas Gerais
+                                        {{ addressInfo.name }}<br />
+                                        {{ addressInfo.zone }}<br />
+                                        {{ addressInfo.state }}
                                     </p>
                                     <p
                                         class="text-xs md:text-sm text-emerald-600 mt-1 md:mt-2"
@@ -99,7 +99,7 @@
                                     <p class="font-semibold text-gray-800">
                                         Telefone
                                     </p>
-                                    <p class="text-gray-600">(32) 99963-5827</p>
+                                    <p class="text-gray-600">{{ contactInfo.phone }}</p>
                                     <p class="text-sm text-gray-500">
                                         WhatsApp disponível
                                     </p>
@@ -129,10 +129,7 @@
                                         E-mail
                                     </p>
                                     <p class="text-gray-600">
-                                        contato@sapucaia.com.br
-                                    </p>
-                                    <p class="text-sm text-gray-500">
-                                        Respondemos em até 4h
+                                        {{ contactInfo.emailContact }}
                                     </p>
                                 </div>
                             </div>
@@ -160,7 +157,7 @@
                                         Funcionamento
                                     </p>
                                     <p class="text-gray-600">
-                                        Todos os dias: 8h às 18h
+                                        {{ businessHours.full }}
                                     </p>
                                 </div>
                             </div>
@@ -175,7 +172,7 @@
                             </h4>
                             <div class="flex space-x-4">
                                 <a
-                                    href="https://instagram.com/sapucaia"
+                                    :href="socialLinks.instagram"
                                     target="_blank"
                                     class="w-10 h-10 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
                                 >
@@ -190,7 +187,7 @@
                                     </svg>
                                 </a>
                                 <a
-                                    href="https://facebook.com/sapucaia"
+                                    :href="socialLinks.facebook"
                                     target="_blank"
                                     class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
                                 >
@@ -205,7 +202,7 @@
                                     </svg>
                                 </a>
                                 <a
-                                    href="https://wa.me/5511998765432"
+                                    :href="whatsappUrl"
                                     target="_blank"
                                     class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
                                 >
@@ -230,7 +227,7 @@
                         class="bg-gray-100 h-full min-h-[300px] md:min-h-[500px] rounded-2xl overflow-hidden shadow-lg"
                     >
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.9364097647157!2d-42.3488471!3d-21.6865207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbd3957cf3a14b9%3A0x18bc4e05b86a222d!2sS%C3%ADtio%20Sapucaia!5e0!3m2!1spt-BR!2sbr!4v1735754321456"
+                            :src="googleMapsEmbed"
                             width="100%"
                             height="100%"
                             style="border: 0"
@@ -274,7 +271,7 @@
                             📞 Dúvidas de Localização
                         </h4>
                         <p class="text-emerald-100">
-                            Entre em contato pelo WhatsApp (32) 99963-5827 para
+                            Entre em contato pelo WhatsApp {{ contactInfo.phone }} para
                             orientações detalhadas de como chegar.
                         </p>
                     </div>
@@ -285,7 +282,22 @@
 </template>
 
 <script setup>
-// Component uses static content with inline SVG icons
+import { 
+    getContactInfo, 
+    getBusinessHours, 
+    getAddressInfo, 
+    getSocialLinks, 
+    getGoogleMapsEmbed,
+    generateWhatsAppUrl 
+} from "~/helpers/contact";
+
+// Get environment-based data
+const contactInfo = getContactInfo();
+const businessHours = getBusinessHours();
+const addressInfo = getAddressInfo();
+const socialLinks = getSocialLinks();
+const googleMapsEmbed = getGoogleMapsEmbed();
+const whatsappUrl = generateWhatsAppUrl();
 </script>
 
 <style>

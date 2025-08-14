@@ -638,10 +638,7 @@
 
 <script setup>
 import { ref } from "vue";
-
-// Usar o composable específico para experiências
-const { getSectionImages, getSectionImagesArray, getImageIndex } =
-  useExperienceImages();
+import { getSectionImages, getSectionImagesArray, getImageIndex } from "~/helpers/images";
 
 // Obter imagens organizadas por seção e role
 const familyImages = getSectionImages("family");

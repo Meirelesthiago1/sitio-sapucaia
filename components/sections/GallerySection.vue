@@ -45,9 +45,7 @@
 
 <script setup>
 import { ref } from "vue";
-
-// Usar o composable centralizado de imagens
-const { getAllImages } = useGalleryImages();
+import { getAllImages } from "~/helpers/images";
 
 // Obter todas as imagens organizadas para o carrossel principal
 const galleryImages = getAllImages();

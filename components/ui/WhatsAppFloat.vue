@@ -1,7 +1,7 @@
 <template>
     <div class="fixed bottom-6 right-6 z-50">
         <a
-            href="https://wa.me/5511998765432?text=Olá! Tenho interesse em conhecer o Eco Parque Sapucaia e me tornar membro. Gostaria de agendar uma visita e saber sobre os valores da mensalidade e taxa de adesão. Quando posso conhecer as instalações?"
+            :href="whatsappUrl"
             target="_blank"
             rel="noopener noreferrer"
             class="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
@@ -23,5 +23,7 @@
 </template>
 
 <script setup>
-// Componente WhatsApp simplificado
+import { generateWhatsAppUrl } from "~/helpers/contact";
+
+const whatsappUrl = generateWhatsAppUrl();
 </script>

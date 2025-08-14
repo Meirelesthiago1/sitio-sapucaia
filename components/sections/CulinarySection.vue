@@ -60,8 +60,7 @@
 </template>
 
 <script setup>
-// Usar o composable centralizado de imagens
-const { getImagesByCategory } = useGalleryImages();
+import { getImagesByCategory } from "~/helpers/images";
 
 // Obter imagens da categoria culinária
 const dishes = getImagesByCategory("culinary");

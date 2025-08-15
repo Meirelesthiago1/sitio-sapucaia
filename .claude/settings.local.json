@@ -7,7 +7,8 @@
       "Bash(node:*)",
       "Bash(npm run format:check:*)",
       "Bash(cp:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(mv:*)"
     ],
     "deny": [],
     "ask": []

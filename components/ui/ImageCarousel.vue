@@ -2,13 +2,13 @@
     <div class="relative">
         <!-- Main Carousel Container -->
         <div
-            class="relative overflow-hidden rounded-3xl shadow-2xl bg-white"
+            class="relative overflow-hidden rounded-3xl shadow-2xl bg-white transform-gpu will-change-transform"
             data-carousel
         >
             <!-- Images Container -->
             <div
-                class="flex transition-transform duration-500 ease-in-out"
-                :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+                class="flex transition-transform duration-400 ease-out transform-gpu will-change-transform"
+                :style="{ transform: `translate3d(-${currentIndex * 100}%, 0, 0)` }"
             >
                 <div
                     v-for="(image, index) in images"
@@ -16,23 +16,23 @@
                     class="w-full flex-shrink-0 relative"
                 >
                     <div
-                        class="aspect-[16/9] relative group cursor-pointer"
+                        class="aspect-[16/9] relative group cursor-pointer transform-gpu will-change-transform"
                         @click="$emit('imageClick', index)"
                     >
                         <img
                             :src="image.image"
                             :alt="image.title"
-                            class="w-full h-full object-cover"
+                            class="w-full h-full object-cover transform-gpu will-change-transform transition-transform duration-300 group-hover:scale-105"
                             loading="lazy"
                         />
                         <!-- Overlay with gradient -->
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 transform-gpu"
                         ></div>
 
                         <!-- Content overlay -->
                         <div
-                            class="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8 text-white transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
+                            class="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8 text-white transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 transform-gpu will-change-transform"
                         >
                             <h3
                                 class="text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2"
@@ -52,11 +52,11 @@
             <!-- Navigation Arrows -->
             <button
                 @click="prevSlide"
-                class="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 group z-10"
+                class="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200 group z-10 transform-gpu hover:scale-105"
                 :class="{ 'opacity-50 cursor-not-allowed': currentIndex === 0 }"
             >
                 <svg
-                    class="w-4 h-4 md:w-6 md:h-6 transform group-hover:scale-110 transition-transform"
+                    class="w-4 h-4 md:w-6 md:h-6 transform group-hover:scale-110 transition-transform duration-200 transform-gpu"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -72,14 +72,14 @@
 
             <button
                 @click="nextSlide"
-                class="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 group z-10"
+                class="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200 group z-10 transform-gpu hover:scale-105"
                 :class="{
                     'opacity-50 cursor-not-allowed':
                         currentIndex === images.length - 1,
                 }"
             >
                 <svg
-                    class="w-4 h-4 md:w-6 md:h-6 transform group-hover:scale-110 transition-transform"
+                    class="w-4 h-4 md:w-6 md:h-6 transform group-hover:scale-110 transition-transform duration-200 transform-gpu"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -101,7 +101,7 @@
                     v-for="(image, index) in images"
                     :key="`indicator-${image.id}`"
                     @click="goToSlide(index)"
-                    class="w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300"
+                    class="w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-200 transform-gpu hover:scale-125"
                     :class="
                         currentIndex === index
                             ? 'bg-white scale-125'
@@ -128,7 +128,7 @@
                     class="flex-shrink-0 relative group"
                 >
                     <div
-                        class="w-16 h-12 rounded-lg overflow-hidden border-2 transition-all duration-300"
+                        class="w-16 h-12 rounded-lg overflow-hidden border-2 transition-all duration-200 transform-gpu"
                         :class="
                             currentIndex === index
                                 ? 'border-emerald-500 scale-105'
@@ -138,7 +138,7 @@
                         <img
                             :src="image.image"
                             :alt="image.title"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-110 transform-gpu will-change-transform"
                             loading="lazy"
                         />
                     </div>

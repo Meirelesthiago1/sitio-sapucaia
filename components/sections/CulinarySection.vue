@@ -26,8 +26,9 @@
                 <p
                     class="text-base md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200"
                 >
-                    Sabores autênticos que celebram a tradição gastronômica
-                    regional
+                    Descubra nossa extensa variedade gastronômica com sabores
+                    autênticos da tradição regional. Muito mais delícias
+                    aguardam você em nosso cardápio completo!
                 </p>
             </div>
             <div

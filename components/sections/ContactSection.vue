@@ -99,7 +99,9 @@
                                     <p class="font-semibold text-gray-800">
                                         Telefone
                                     </p>
-                                    <p class="text-gray-600">{{ contactInfo.phone }}</p>
+                                    <p class="text-gray-600">
+                                        {{ contactInfo.phone }}
+                                    </p>
                                     <p class="text-sm text-gray-500">
                                         WhatsApp disponível
                                     </p>
@@ -244,7 +246,7 @@
             <div
                 class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl p-12 text-white text-center"
             >
-                <h3 class="text-3xl font-bold mb-6">Como Chegar ao Sítio</h3>
+                <h3 class="text-3xl font-bold mb-6">Como Chegar ao Parque</h3>
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"
                 >
@@ -271,8 +273,9 @@
                             📞 Dúvidas de Localização
                         </h4>
                         <p class="text-emerald-100">
-                            Entre em contato pelo WhatsApp {{ contactInfo.phone }} para
-                            orientações detalhadas de como chegar.
+                            Entre em contato pelo WhatsApp
+                            {{ contactInfo.phone }} para orientações detalhadas
+                            de como chegar.
                         </p>
                     </div>
                 </div>
@@ -282,13 +285,13 @@
 </template>
 
 <script setup>
-import { 
-    getContactInfo, 
-    getBusinessHours, 
-    getAddressInfo, 
-    getSocialLinks, 
+import {
+    getContactInfo,
+    getBusinessHours,
+    getAddressInfo,
+    getSocialLinks,
     getGoogleMapsEmbed,
-    generateWhatsAppUrl 
+    generateWhatsAppUrl,
 } from "~/helpers/contact";
 
 // Get environment-based data

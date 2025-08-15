@@ -59,12 +59,15 @@
                             <div
                                 class="text-3xl md:text-4xl font-bold text-slate-800 mt-1 md:mt-2"
                             >
-                                R$ 151,80/mês
+                                {{ formatCurrency(familyMonthlyFee) }}/mês
                             </div>
                             <p
                                 class="text-xs md:text-sm text-slate-400 mt-1 md:mt-2"
                             >
-                                *Baseado em 10% do salário mínimo vigente
+                                *Baseado no salário mínimo vigente
+                            </p>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Valor mensalidade + taxa de adesão
                             </p>
                         </div>
 
@@ -185,12 +188,15 @@
                             <div
                                 class="text-3xl md:text-4xl font-bold text-slate-800 mt-1 md:mt-2"
                             >
-                                R$ 91,80/mês
+                                {{ formatCurrency(individualMonthlyFee) }}/mês
                             </div>
                             <p
                                 class="text-xs md:text-sm text-slate-400 mt-1 md:mt-2"
                             >
-                                *Baseado em 6% do salário mínimo vigente
+                                *Baseado no salário mínimo vigente
+                            </p>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Valor mensalidade + taxa de adesão
                             </p>
                         </div>
 
@@ -464,73 +470,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Call to Action -->
-            <div class="text-center mt-16">
-                <div
-                    class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl p-12 text-white shadow-2xl"
-                >
-                    <h3 class="text-3xl md:text-4xl font-bold mb-6">
-                        Pronto para Fazer Parte da Nossa Família?
-                    </h3>
-                    <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-                        Entre em contato conosco e conheça todos os benefícios
-                        de ser membro do Eco Parque Sapucaia
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button
-                            @click="openMembershipDialog('familiar')"
-                            class="inline-flex items-center px-6 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-lg rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-                        >
-                            <svg
-                                class="w-6 h-6 mr-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-                            Familiar (R$ 151,80)
-                        </button>
-                        <button
-                            @click="openMembershipDialog('individual')"
-                            class="inline-flex items-center px-6 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-bold text-lg rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-                        >
-                            <svg
-                                class="w-6 h-6 mr-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                            </svg>
-                            Individual (R$ 91,80)
-                        </button>
-                        <a
-                            href="#contato"
-                            class="inline-flex items-center px-6 py-4 bg-white text-emerald-600 font-bold text-lg rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg border-2 border-emerald-600"
-                        >
-                            <svg
-                                class="w-6 h-6 mr-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                            </svg>
-                            Outras Formas
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Observação sobre valores -->
-            <div class="mt-8 text-center">
-                <p class="text-sm text-slate-500">
-                    * Valores baseados no salário mínimo vigente (R$ 1.518,00).
-                    Sujeitos a alteração conforme legislação.
-                </p>
-            </div>
         </div>
 
         <!-- Membership Dialog -->
@@ -544,12 +483,34 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, computed } from "vue";
+
+// Get runtime config for minimum wage
+const config = useRuntimeConfig();
+
+// Computed properties for monthly fees
+const minimumWage = computed(() => Number(config.public.minimumWage) || 1518);
+
+const familyMonthlyFee = computed(() => {
+    return minimumWage.value * 0.1; // 10% of minimum wage
+});
+
+const individualMonthlyFee = computed(() => {
+    return minimumWage.value * 0.06; // 6% of minimum wage
+});
+
+// Format currency
+const formatCurrency = (value) => {
+    return new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+    }).format(value);
+};
 
 // Dialog state
 const membershipDialog = reactive({
     isOpen: false,
-    type: 'familiar' // 'familiar' or 'individual'
+    type: "familiar", // 'familiar' or 'individual'
 });
 
 // Methods
@@ -563,7 +524,7 @@ const closeMembershipDialog = () => {
 };
 
 const handleMembershipSubmit = (data) => {
-    console.log('Membership registration submitted:', data);
+    console.log("Membership registration submitted:", data);
     // You can add additional logic here if needed
 };
 </script>

@@ -5,7 +5,7 @@
         <SectionsHeroSection />
         <SectionsExperiencesSection />
         <SectionsCulinarySection />
-        <SectionsGallerySection />
+        <SectionsFutureInstallationsSection />
         <SectionsMembershipSection />
         <SectionsContactSection />
         <SectionsFaqSection />

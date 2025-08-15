@@ -1,33 +1,33 @@
 <template>
     <section
-        id="galeria"
-        class="py-12 md:py-24 bg-gradient-to-br from-slate-50 to-emerald-50"
+        id="futuras-instalacoes"
+        class="py-12 md:py-24 bg-gradient-to-br from-teal-50 to-emerald-50"
     >
         <div class="container mx-auto px-4 md:px-6">
             <div class="text-center mb-10 md:mb-20">
                 <h2
                     class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-6 text-slate-800 animate-fade-in-up"
                 >
-                    Nossa
+                    Futuras
                     <span
-                        class="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent"
-                        >Galeria</span
+                        class="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent"
+                        >Instalações</span
                     >
                 </h2>
                 <p
                     class="text-base md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200"
                 >
-                    Explore a beleza natural do Sapucaia através de nossas
-                    imagens
+                    Conheça os projetos que estão por vir. Seja membro agora e
+                    desfrute dessas melhorias exclusivas!
                 </p>
             </div>
 
-            <!-- Main Gallery Carousel -->
+            <!-- Main Future Installations Carousel -->
             <div class="animate-fade-in-up animation-delay-400">
                 <UiImageCarousel
-                    :images="galleryImages"
+                    :images="futureImages"
                     :autoplay="true"
-                    :autoplay-interval="6000"
+                    :autoplay-interval="7000"
                     @image-click="openLightbox"
                 />
             </div>
@@ -36,7 +36,7 @@
         <!-- Lightbox Modal -->
         <UiImageLightbox
             :is-open="isLightboxOpen"
-            :images="galleryImages"
+            :images="futureImages"
             :initial-index="lightboxIndex"
             @close="closeLightbox"
         />
@@ -45,10 +45,10 @@
 
 <script setup>
 import { ref } from "vue";
-import { getCurrentImages } from "~/helpers/images";
+import { getImagesByCategory } from "~/helpers/images";
 
-// Obter apenas imagens das instalações atuais (excluindo projetos futuros)
-const galleryImages = getCurrentImages();
+// Obter todas as imagens de futuras instalações
+const futureImages = getImagesByCategory("future");
 
 // Lightbox functionality
 const isLightboxOpen = ref(false);
@@ -61,5 +61,16 @@ const openLightbox = (index) => {
 
 const closeLightbox = () => {
     isLightboxOpen.value = false;
+};
+
+// Scroll function for buttons
+const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+    }
 };
 </script>

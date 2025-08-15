@@ -1,23 +1,23 @@
 <template>
     <Teleport to="body">
         <Transition
-            enter-active-class="transition-opacity duration-300"
-            leave-active-class="transition-opacity duration-300"
-            enter-from-class="opacity-0"
-            enter-to-class="opacity-100"
-            leave-from-class="opacity-100"
-            leave-to-class="opacity-0"
+            enter-active-class="transition-all duration-500 ease-out"
+            leave-active-class="transition-all duration-300 ease-in"
+            enter-from-class="opacity-0 backdrop-blur-none"
+            enter-to-class="opacity-100 backdrop-blur-sm"
+            leave-from-class="opacity-100 backdrop-blur-sm"
+            leave-to-class="opacity-0 backdrop-blur-none"
         >
             <div
                 v-if="isOpen"
-                class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+                class="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md transform-gpu will-change-transform"
                 @click="closeLightbox"
                 @keydown.esc="closeLightbox"
             >
                 <!-- Close button -->
                 <button
                     @click="closeLightbox"
-                    class="absolute top-4 right-4 z-60 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+                    class="absolute top-4 right-4 z-60 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200 transform-gpu hover:scale-105"
                 >
                     <svg
                         class="w-6 h-6"
@@ -38,7 +38,7 @@
                 <button
                     v-if="images.length > 1"
                     @click.stop="prevImage"
-                    class="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 z-60"
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200 transform-gpu hover:scale-105 z-60"
                     :class="{
                         'opacity-50 cursor-not-allowed': currentIndex === 0,
                     }"
@@ -61,7 +61,7 @@
                 <button
                     v-if="images.length > 1"
                     @click.stop="nextImage"
-                    class="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 z-60"
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-200 transform-gpu hover:scale-105 z-60"
                     :class="{
                         'opacity-50 cursor-not-allowed':
                             currentIndex === images.length - 1,
@@ -85,24 +85,24 @@
                 <!-- Image container -->
                 <div class="relative max-w-full max-h-full p-4" @click.stop>
                     <Transition
-                        enter-active-class="transition-all duration-300"
-                        leave-active-class="transition-all duration-300"
-                        enter-from-class="opacity-0 scale-95"
-                        enter-to-class="opacity-100 scale-100"
-                        leave-from-class="opacity-100 scale-100"
-                        leave-to-class="opacity-0 scale-95"
+                        enter-active-class="transition-all duration-400 ease-out"
+                        leave-active-class="transition-all duration-200 ease-in"
+                        enter-from-class="opacity-0 scale-90 translate-y-4"
+                        enter-to-class="opacity-100 scale-100 translate-y-0"
+                        leave-from-class="opacity-100 scale-100 translate-y-0"
+                        leave-to-class="opacity-0 scale-95 translate-y-2"
                         mode="out-in"
                     >
                         <div
                             :key="currentIndex"
-                            class="flex flex-col items-center"
+                            class="flex flex-col items-center transform-gpu will-change-transform"
                         >
                             <img
                                 :src="
                                     currentImage.image || currentImage.thumbnail
                                 "
                                 :alt="currentImage.title || currentImage.alt"
-                                class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl"
+                                class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl transform-gpu will-change-transform transition-transform duration-300 hover:scale-[1.02]"
                             />
 
                             <!-- Image info -->
@@ -149,7 +149,7 @@
                         v-for="(image, index) in images"
                         :key="`thumb-${index}`"
                         @click.stop="currentIndex = index"
-                        class="w-12 h-8 rounded overflow-hidden border-2 transition-all duration-300"
+                        class="w-12 h-8 rounded overflow-hidden border-2 transition-all duration-200 transform-gpu hover:scale-110"
                         :class="
                             currentIndex === index
                                 ? 'border-white scale-110'

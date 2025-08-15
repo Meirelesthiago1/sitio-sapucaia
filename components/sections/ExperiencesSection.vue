@@ -64,28 +64,28 @@
                     <span
                       class="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"
                     ></span>
+                    <span>Diversão segura e alegria para toda a família</span>
+                  </li>
+                  <li class="flex items-start">
                     <span
-                      >Piscina natural com área infantil segura e
-                      monitorada</span
+                      class="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"
+                    ></span>
+                    <span
+                      >Pets da fazenda para interação educativa das
+                      crianças</span
                     >
                   </li>
                   <li class="flex items-start">
                     <span
                       class="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"
                     ></span>
-                    <span>Playground para crianças até 12 anos</span>
+                    <span>Espaços naturais para brincadeiras supervisionadas</span>
                   </li>
                   <li class="flex items-start">
                     <span
                       class="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"
                     ></span>
-                    <span>Trilhas em meio à natureza com supervisão</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span
-                      class="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"
-                    ></span>
-                    <span>Salão de festas para eventos especiais</span>
+                    <span>Ambientes acolhedores para reunir a família</span>
                   </li>
                 </ul>
               </div>
@@ -437,25 +437,13 @@
                     <span
                       class="inline-block w-2 h-2 bg-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"
                     ></span>
-                    <span>Quadra de vôlei de areia </span>
+                    <span>Trilhas recreativas e atividades na natureza</span>
                   </li>
                   <li class="flex items-start">
                     <span
                       class="inline-block w-2 h-2 bg-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"
                     ></span>
                     <span>Campo de futebol gramado</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span
-                      class="inline-block w-2 h-2 bg-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"
-                    ></span>
-                    <span>Salão de jogos com sinuca, pebolim e outros</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span
-                      class="inline-block w-2 h-2 bg-orange-500 rounded-full mt-2 mr-4 flex-shrink-0"
-                    ></span>
-                    <span>Atividades aquáticas na piscina natural</span>
                   </li>
                   <li class="flex items-start">
                     <span

@@ -90,9 +90,10 @@ const mobileMenuOpen = ref(false);
 const navItems = [
     { href: "#hero", label: "Início" },
     { href: "#experiencias", label: "Experiências" },
-    { href: "#associacao", label: "Seja Membro" },
     { href: "#culinaria", label: "Culinária" },
     { href: "#galeria", label: "Galeria" },
+    { href: "#futuras-instalacoes", label: "Futuras Instalações" },
+    { href: "#associacao", label: "Seja Membro" },
     { href: "#contato", label: "Contato" },
     { href: "#faq", label: "FAQ" },
 ];

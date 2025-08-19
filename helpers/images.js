@@ -20,12 +20,12 @@ export const imageCategories = {
         },
         {
             id: "family-3",
-            image: "/img/area-natural.jpg",
-            title: "Espaços Naturais para Crianças",
+            image: "/img/playground.jpg",
+            title: "Playground para Crianças",
             description:
-                "Amplas áreas verdes seguras onde crianças podem brincar supervisionadas em meio à natureza.",
+                "Playground moderno e seguro equipado para diversão de crianças até 12 anos.",
             category: "Para Famílias",
-            alt: "Áreas naturais para brincadeiras supervisionadas",
+            alt: "Playground para crianças até 12 anos",
         },
         {
             id: "family-4",
@@ -171,15 +171,6 @@ export const imageCategories = {
             alt: "Projeto do novo salão principal",
         },
         {
-            id: "future-4",
-            image: "/img/projeto-sala-jogos.jpg",
-            title: "Sala de Jogos Premium",
-            description:
-                "Nova sala de jogos com equipamentos modernos e espaço otimizado para entretenimento familiar.",
-            category: "Futuras Instalações",
-            alt: "Projeto da nova sala de jogos",
-        },
-        {
             id: "future-5",
             image: "/img/projeto-area-externa.jpg",
             title: "Paisagismo Renovado",
@@ -205,24 +196,6 @@ export const imageCategories = {
                 "Espaços projetados para máxima integração com o ambiente natural preservado.",
             category: "Futuras Instalações",
             alt: "Projeto de integração natural",
-        },
-        {
-            id: "future-8",
-            image: "/img/projeto-campo-areia.jpg",
-            title: "Quadra de Vôlei de Areia",
-            description:
-                "Nova quadra profissional de vôlei de areia com arquibancadas e iluminação para competições e recreação esportiva.",
-            category: "Futuras Instalações",
-            alt: "Projeto da quadra de vôlei de areia",
-        },
-        {
-            id: "future-9",
-            image: "/img/projeto-playground.jpg",
-            title: "Playground Infantil Completo",
-            description:
-                "Playground moderno e seguro com equipamentos diversificados para crianças de diferentes idades e área de convivência para pais.",
-            category: "Futuras Instalações",
-            alt: "Projeto do playground infantil",
         },
     ],
 };

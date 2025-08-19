@@ -113,7 +113,7 @@
                                     </svg>
                                     <span
                                         class="text-sm md:text-base text-slate-700"
-                                        >Filhos menores de 18 anos</span
+                                        >Filhos até 21 anos</span
                                     >
                                 </li>
                                 <li class="flex items-center">

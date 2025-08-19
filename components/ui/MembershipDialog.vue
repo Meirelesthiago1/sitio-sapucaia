@@ -26,8 +26,7 @@
                             }}
                         </h2>
                         <p class="text-emerald-100 text-sm md:text-base">
-                            Taxa de Adesão - Mensalidade conforme valores do
-                            site
+                            Pré-Inscrição - Taxa de Adesão
                         </p>
                     </div>
                     <button
@@ -75,12 +74,12 @@
                             <h3
                                 class="font-semibold text-emerald-800 text-sm md:text-base"
                             >
-                                Taxa de Adesão ao Eco Parque
+                                Pré-Inscrição no Eco Parque
                             </h3>
                             <p class="text-emerald-700 text-xs md:text-sm mt-1">
-                                Este formulário é para pagamento da taxa de
-                                adesão. A cobrança da mensalidade iniciará após
-                                a finalização da documentação legal.
+                                Este formulário é para pré-inscrição. Nossa
+                                equipe entrará em contato para orientações sobre
+                                pagamento e documentação.
                             </p>
                         </div>
                     </div>
@@ -232,13 +231,13 @@
                                 <input
                                     v-model.number="dependentForm.age"
                                     type="number"
-                                    min="1"
-                                    max="17"
+                                    min="0"
+                                    max="21"
                                     class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-emerald-500 focus:shadow-md transition-all duration-200 placeholder-gray-500 text-gray-900"
                                     placeholder="Ex: 12"
                                 />
                                 <p class="text-xs text-gray-500 mt-1">
-                                    Filhos menores de 18 anos
+                                    Filhos até 21 anos
                                 </p>
                             </div>
                         </div>
@@ -340,7 +339,7 @@
                             <span class="font-medium">Inclui:</span>
                             {{
                                 membershipType === "familiar"
-                                    ? "Titular + cônjuge + até 6 dependentes"
+                                    ? "Titular + cônjuge + filhos até 21 anos"
                                     : "Acesso individual"
                             }}
                         </p>
@@ -499,105 +498,6 @@
                     </div>
                 </div>
 
-                <!-- Meio de Pagamento -->
-                <div>
-                    <label
-                        for="paymentMethod"
-                        class="block text-sm font-semibold text-gray-700 mb-2"
-                    >
-                        Meio de Pagamento Preferido *
-                    </label>
-                    <select
-                        id="paymentMethod"
-                        v-model="form.paymentMethod"
-                        required
-                        @change="resetInstallments"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-emerald-500 focus:shadow-md transition-all duration-200 text-gray-900 bg-white"
-                    >
-                        <option value="" class="text-gray-500">
-                            Selecione uma opção
-                        </option>
-                        <option value="PIX" class="text-gray-900">PIX</option>
-                        <option value="Boleto Bancário" class="text-gray-900">
-                            Boleto Bancário
-                        </option>
-                        <option value="Cartão de Débito" class="text-gray-900">
-                            Cartão de Débito
-                        </option>
-                        <option value="Cartão de Crédito" class="text-gray-900">
-                            Cartão de Crédito
-                        </option>
-                        <option value="Dinheiro" class="text-gray-900">
-                            Dinheiro
-                        </option>
-                    </select>
-                </div>
-
-                <!-- Parcelamento (apenas para Cartão de Crédito) -->
-                <div
-                    v-if="form.paymentMethod === 'Cartão de Crédito'"
-                    class="space-y-3"
-                >
-                    <label
-                        for="installments"
-                        class="block text-sm font-semibold text-gray-700 mb-2"
-                    >
-                        Número de Parcelas *
-                    </label>
-                    <select
-                        id="installments"
-                        v-model="form.installments"
-                        required
-                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-emerald-500 focus:shadow-md transition-all duration-200 text-gray-900 bg-white"
-                    >
-                        <option value="" class="text-gray-500">
-                            Selecione o parcelamento
-                        </option>
-                        <option
-                            v-for="option in installmentOptions"
-                            :key="option.parcelas"
-                            :value="option.parcelas"
-                            class="text-gray-900"
-                        >
-                            {{ option.label }}
-                        </option>
-                    </select>
-
-                    <!-- Info sobre parcelamento selecionado -->
-                    <div
-                        v-if="selectedInstallmentInfo"
-                        class="bg-blue-50 border border-blue-200 rounded-xl p-3"
-                    >
-                        <h4 class="text-sm font-semibold text-blue-800 mb-1">
-                            Detalhes do Parcelamento
-                        </h4>
-                        <div class="text-sm text-blue-700 space-y-1">
-                            <p>
-                                <span class="font-medium"
-                                    >Valor por parcela:</span
-                                >
-                                {{
-                                    formatCurrency(
-                                        selectedInstallmentInfo.valorParcela
-                                    )
-                                }}
-                            </p>
-                            <p>
-                                <span class="font-medium">Total:</span>
-                                {{
-                                    formatCurrency(
-                                        selectedInstallmentInfo.valorTotal
-                                    )
-                                }}
-                            </p>
-                            <p v-if="selectedInstallmentInfo.juros > 0">
-                                <span class="font-medium">Taxa de juros:</span>
-                                {{ selectedInstallmentInfo.juros }}% a.m.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Buttons -->
                 <div class="flex flex-col sm:flex-row gap-3 pt-4">
                     <button
@@ -605,9 +505,7 @@
                         :disabled="isSubmitting"
                         class="flex-1 px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-200 transform-gpu hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
-                        <span v-if="!isSubmitting"
-                            >Solicitar Taxa de Adesão</span
-                        >
+                        <span v-if="!isSubmitting">Enviar Pré-Inscrição</span>
                         <span v-else class="flex items-center justify-center">
                             <svg
                                 class="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
@@ -682,82 +580,12 @@ const membershipFee = computed(() => {
         : Number(config.public.membershipFeeIndividual) || 1200;
 });
 
-// Installment calculation logic
-const calculateInstallments = (baseValue, installments) => {
-    let interestRate = 0;
-
-    // Escalating interest rates
-    if (installments >= 7 && installments <= 9) {
-        interestRate = 2; // 2% a.m.
-    } else if (installments >= 10 && installments <= 12) {
-        interestRate = 3; // 3% a.m.
-    }
-
-    if (interestRate === 0) {
-        // No interest
-        return {
-            parcelas: installments,
-            valorParcela: baseValue / installments,
-            valorTotal: baseValue,
-            juros: 0,
-        };
-    } else {
-        // Calculate with compound interest
-        const monthlyRate = interestRate / 100;
-        const totalValue = baseValue * Math.pow(1 + monthlyRate, installments);
-        const installmentValue = totalValue / installments;
-
-        return {
-            parcelas: installments,
-            valorParcela: installmentValue,
-            valorTotal: totalValue,
-            juros: interestRate,
-        };
-    }
-};
-
-// Installment options computed
-const installmentOptions = computed(() => {
-    const options = [];
-    const baseValue = membershipFee.value;
-
-    for (let i = 1; i <= 12; i++) {
-        const calc = calculateInstallments(baseValue, i);
-        const label =
-            i === 1
-                ? `À vista - ${formatCurrency(calc.valorTotal)}`
-                : `${i}x de ${formatCurrency(
-                      calc.valorParcela
-                  )} = ${formatCurrency(calc.valorTotal)}${
-                      calc.juros > 0 ? ` (${calc.juros}% a.m.)` : ""
-                  }`;
-
-        options.push({
-            parcelas: i,
-            label,
-            ...calc,
-        });
-    }
-
-    return options;
-});
-
-// Selected installment info
-const selectedInstallmentInfo = computed(() => {
-    if (!form.installments) return null;
-    return installmentOptions.value.find(
-        (opt) => opt.parcelas === Number(form.installments)
-    );
-});
-
 // Reactive data
 const isSubmitting = ref(false);
 const form = reactive({
     name: "",
     phone: "",
     email: "",
-    paymentMethod: "",
-    installments: "",
     dependents: [],
 });
 
@@ -775,15 +603,19 @@ const errors = reactive({
     dependent: "",
 });
 
-// Relationship options
-const relationshipOptions = [
-    "Cônjuge",
-    "Filho(a)",
-    "Neto(a)",
-    "Pai/Mãe",
-    "Irmão/Irmã",
-    "Outro",
-];
+// Relationship options (computed to handle spouse limitation)
+const relationshipOptions = computed(() => {
+    const hasSpouse = form.dependents.some(
+        (dep) => dep.relationship === "Cônjuge"
+    );
+    const baseOptions = ["Cônjuge", "Filho(a)"];
+
+    if (hasSpouse) {
+        return baseOptions.filter((option) => option !== "Cônjuge");
+    }
+
+    return baseOptions;
+});
 
 // Methods
 const closeDialog = () => {
@@ -794,17 +626,11 @@ const resetForm = () => {
     form.name = "";
     form.phone = "";
     form.email = "";
-    form.paymentMethod = "";
-    form.installments = "";
     form.dependents = [];
     errors.phone = "";
     errors.email = "";
     errors.dependent = "";
     resetDependentForm();
-};
-
-const resetInstallments = () => {
-    form.installments = "";
 };
 
 const resetDependentForm = () => {
@@ -851,9 +677,9 @@ const validateDependentForm = () => {
     // Age is required only for children
     if (
         dependentForm.relationship === "Filho(a)" &&
-        (!dependentForm.age || dependentForm.age < 1 || dependentForm.age > 17)
+        (!dependentForm.age || dependentForm.age < 0 || dependentForm.age > 21)
     ) {
-        errors.dependent = "Idade deve ser entre 1 e 17 anos para filhos";
+        errors.dependent = "Idade deve ser entre 0 e 21 anos para filhos";
         return false;
     }
 
@@ -907,11 +733,6 @@ const validateForm = () => {
     const isPhoneValid = validatePhone();
     const isEmailValid = validateEmail();
 
-    // Validate installments for credit card
-    if (form.paymentMethod === "Cartão de Crédito" && !form.installments) {
-        return false;
-    }
-
     return isPhoneValid && isEmailValid;
 };
 
@@ -934,22 +755,6 @@ const submitForm = async () => {
                 : "Associação Individual";
 
         const taxaValue = formatCurrency(membershipFee.value);
-
-        let installmentInfo = "";
-        if (
-            form.paymentMethod === "Cartão de Crédito" &&
-            form.installments &&
-            selectedInstallmentInfo.value
-        ) {
-            const info = selectedInstallmentInfo.value;
-            installmentInfo = `\n *Parcelamento:* ${
-                info.parcelas
-            }x de ${formatCurrency(info.valorParcela)}`;
-            if (info.juros > 0) {
-                installmentInfo += ` (Taxa: ${info.juros}% a.m.)`;
-            }
-            installmentInfo += `\n *Total:* ${formatCurrency(info.valorTotal)}`;
-        }
 
         let dependentsInfo = "";
         if (props.membershipType === "familiar" && form.dependents.length > 0) {
@@ -974,8 +779,7 @@ const submitForm = async () => {
 *Nome:* ${form.name}
 *Telefone:* ${form.phone}
 *E-mail:* ${form.email}
-*Meio de Pagamento Preferido:* ${form.paymentMethod}
-*Taxa de Adesão:* ${taxaValue}${installmentInfo}${dependentsInfo}
+*Taxa de Adesão:* ${taxaValue}${dependentsInfo}
 `;
 
         // Create WhatsApp URL with the form data

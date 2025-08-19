@@ -79,7 +79,7 @@
                     <span
                       class="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"
                     ></span>
-                    <span>Espaços naturais para brincadeiras supervisionadas</span>
+                    <span>Playground para crianças até 12 anos</span>
                   </li>
                   <li class="flex items-start">
                     <span

@@ -95,7 +95,7 @@ const faqs = [
     {
         id: 4,
         question: "Quem pode usar as instalações?",
-        answer: "Apenas membros com mensalidade em dia e seus dependentes podem usar as instalações. Membros familiares incluem cônjuge e filhos menores de 18 anos. Todos acima de 5 anos precisam de carteirinha de identificação.",
+        answer: "Apenas membros com mensalidade em dia e seus dependentes podem usar as instalações. Membros familiares incluem cônjuge e filhos até 21 anos. Todos acima de 5 anos precisam de carteirinha de identificação.",
     },
     {
         id: 5,

@@ -245,6 +245,7 @@ watch(
     (isOpen) => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
+            currentIndex.value = props.initialIndex;
         } else {
             document.body.style.overflow = "";
         }

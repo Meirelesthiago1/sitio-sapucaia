@@ -2,12 +2,12 @@ export const imageCategories = {
     family: [
         {
             id: "family-1",
-            image: "/img/crianca-feliz.avif",
-            title: "Diversão em Família",
+            image: "/img/area-natural.jpg",
+            title: "Área Natural Preservada",
             description:
-                "Espaços seguros e divertidos onde pais e filhos criam memórias inesquecíveis juntos.",
+                "Ambientes naturais preservados onde famílias podem desfrutar da beleza da natureza em harmonia com o meio ambiente.",
             category: "Para Famílias",
-            alt: "Criança feliz se divertindo",
+            alt: "Área natural preservada",
         },
         {
             id: "family-2",

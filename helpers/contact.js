@@ -46,7 +46,7 @@ export function getSocialLinks() {
             "https://www.instagram.com/ecoparksapucaia?utm_source=qr&igsh=MWc0MG81OWprZnM1Mw==",
         facebook:
             config.public.facebookUrl ||
-            "https://www.facebook.com/sitio.sapucaia.1?locale=pt_BR",
+            "https://www.facebook.com/ecoparksapucaia",
     };
 }
 

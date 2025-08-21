@@ -7,7 +7,7 @@
                     rgba(0, 0, 0, 0.3),
                     rgba(0, 0, 0, 0.3)
                 ),
-                url('/img/hero.jpg');
+                url('/img/hero.png');
         "
     >
         <!-- Floating particles effect -->
